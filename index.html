@@ -1165,7 +1165,7 @@ footer {
 </style>
 
 <script>
-function sendEmail() {
+async function sendEmail() {
   var name = document.getElementById("f_name").value || "";
   var org = document.getElementById("f_org").value || "";
   var phone = document.getElementById("f_phone").value || "";
@@ -1173,17 +1173,63 @@ function sendEmail() {
   var service = document.getElementById("f_service").value || "";
   var message = document.getElementById("f_message").value || "";
 
-  var subject = encodeURIComponent("Maverick Apps Inquiry - " + (org || name || "New Customer"));
-  var body = encodeURIComponent(
-    "Name: " + name + "\r\n" +
-    "Organization: " + org + "\r\n" +
-    "Phone: " + phone + "\r\n" +
-    "Email: " + email + "\r\n" +
-    "Interested In: " + service + "\r\n\r\n" +
-    "Message:\r\n" + message
-  );
+  if (!name || !email) {
+    alert("Please enter at least your name and email before sending.");
+    return;
+  }
 
-  window.open("mailto:pocketgrandslam@gmail.com?subject=" + subject + "&body=" + body, "_self");
+  var btn = document.querySelector(".form-btn");
+  btn.disabled = true;
+  btn.innerHTML = "⏳ &nbsp; Sending...";
+
+  var data = {
+    access_key: "9fa7cbc2-6d82-4e20-8880-1a0ceafeca94",
+    subject: "Maverick Apps Inquiry - " + (org || name || "New Customer"),
+    from_name: "Maverick Apps Website",
+    name: name,
+    email: email,
+    message:
+      "Name: " + name + "\n" +
+      "Organization: " + org + "\n" +
+      "Phone: " + phone + "\n" +
+      "Email: " + email + "\n" +
+      "Interested In: " + service + "\n\n" +
+      "Message:\n" + message
+  };
+
+  try {
+    var response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+    var result = await response.json();
+    if (result.success) {
+      btn.innerHTML = "✅ &nbsp; Message Sent!";
+      btn.style.background = "#4ecba0";
+      document.getElementById("f_name").value = "";
+      document.getElementById("f_org").value = "";
+      document.getElementById("f_phone").value = "";
+      document.getElementById("f_email").value = "";
+      document.getElementById("f_service").value = "";
+      document.getElementById("f_message").value = "";
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = "★ &nbsp; Send Message &nbsp; ★";
+        btn.style.background = "";
+      }, 4000);
+    } else {
+      throw new Error("Send failed");
+    }
+  } catch(err) {
+    btn.innerHTML = "❌ &nbsp; Failed — Try Again";
+    btn.style.background = "#ff6060";
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.innerHTML = "★ &nbsp; Send Message &nbsp; ★";
+      btn.style.background = "";
+    }, 4000);
+  }
 }
 </script>
 
