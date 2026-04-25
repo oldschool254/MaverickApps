@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="apple-touch-icon" sizes="180x180" href="img/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="img/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -234,32 +234,31 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 0 40px;
-  height: 70px;
+  padding: 0.75rem 2.5rem;
+  padding-top: calc(0.75rem + env(safe-area-inset-top, 0px));
+  min-height: 5.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   background: rgba(27,42,107,0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(192,57,43,0.2);
 }
 
 .nav-logo {
-  font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
-  font-size: 1.75rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  line-height: 0;
   text-decoration: none;
 }
 
-.nav-logo span { color: var(--white); }
 
 .nav-logo-img {
-  height: 2.75rem;
+  height: 4.0625rem;
   width: auto;
-  vertical-align: middle;
-  margin-right: 0.625rem;
-  border-radius: 0.25rem;
+  display: block;
 }
 
 .nav-links {
@@ -1234,14 +1233,20 @@ footer {
 }
 
 .footer-logo {
-  font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
-  font-size: 2.625rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 2.5rem;
 }
 
-.footer-logo span { color: var(--white); }
+.footer-logo-img {
+  width: 17rem;
+  height: auto;
+  display: block;
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+}
+
 
 .footer-tagline {
   font-size: 0.625rem;
@@ -1422,7 +1427,7 @@ async function sendEmail() {
 <!-- NAV -->
 
 <nav>
-  <a href="#home" class="nav-logo"><img src="img/logo.png" alt="Lone Star Labor Solutions" class="nav-logo-img">LONE STAR LABOR <span>SOLUTIONS</span></a>
+  <a href="#home" class="nav-logo"><img src="img/logo.png" alt="Lone Star Labor Solutions" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#who-we-serve">Who We Serve</a></li>
@@ -1852,7 +1857,7 @@ async function sendEmail() {
 <!-- FOOTER -->
 
 <footer>
-  <div class="footer-logo"><img src="img/logo.png" alt="Lone Star Labor Solutions" style="height:3.5rem;width:auto;display:block;margin:0 auto 0.5rem;border-radius:0.25rem;">LONE STAR LABOR <span>SOLUTIONS</span></div>
+  <div class="footer-logo"><img src="img/logo.png" alt="Lone Star Labor Solutions" class="footer-logo-img"></div>
   <div class="footer-tagline">Your Documents, With You When You Need Them Most</div>
   <div class="footer-links">
     <a href="#services">Services</a>

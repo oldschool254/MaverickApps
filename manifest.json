@@ -4,18 +4,18 @@
   "description": "AI-powered apps for every industry.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1B2A6B",
+  "background_color": "#ffffff",
   "theme_color": "#1B2A6B",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "img/logo.png",
+      "src": "img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "img/logo.png",
+      "src": "img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
