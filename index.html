@@ -336,11 +336,7 @@ nav {
 }
 
 .hero-logo-img {
-  width: 420px;
-  max-width: 90%;
   height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 .hero-title {
@@ -1412,9 +1408,6 @@ footer {
   .footer-links { gap: 20px; }
 }
 
-@media (max-width: 480px) {
-  .hero-logo-img { width: 320px; }
-}
 
   /* ── CROSS-DEVICE FONT SAFETY NET ── */
   /* If Google Fonts fails (no internet, slow connection), fall back gracefully */
@@ -1529,7 +1522,7 @@ async function sendEmail() {
 <section id="home" class="hero">
   <div class="hero-watermark">★</div>
   <div class="hero-logo-wrap">
-    <img src="img/logo.png" alt="Lone Star Labor Solutions" class="hero-logo-img">
+    <img src="img/logo.png" alt="Lone Star Labor Solutions" class="hero-logo-img" style="width:420px; max-width:92%; display:block; margin:0 auto;">
   </div>
   <div class="hero-content">
     <div class="hero-stars">★ &nbsp; ★ &nbsp; ★</div>
