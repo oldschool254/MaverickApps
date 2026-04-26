@@ -285,7 +285,7 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 40px 80px;
+  padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
   background-color: #1B2A6B;
@@ -315,7 +315,7 @@ nav {
   pointer-events: none;
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; width: 100%; padding: 0 2.5rem; box-sizing: border-box; }
 
 .hero-stars {
   font-size: 0.75rem;
@@ -337,16 +337,16 @@ nav {
 
 
 .hero-logo-wrap {
-  margin: 0 auto 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  mix-blend-mode: multiply;
   animation: fadeInDown 0.95s ease both;
 }
 
 .hero-logo-img {
-  width: 12rem;
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  mix-blend-mode: multiply;
 }
 
 .hero-title {
@@ -1305,7 +1305,8 @@ footer {
 @media (max-width: 768px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero { padding: 100px 24px 60px; }
+  .hero { padding: 100px 0 60px; }
+  .hero-content { padding: 0 1.5rem; }
   section { padding: 70px 24px; }
   .serve-grid, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
   .serve-list { grid-template-columns: 1fr; }
@@ -1440,18 +1441,14 @@ async function sendEmail() {
 
 <!-- HERO -->
 
-<section id="home" class="hero" style="max-width:100%; padding-left:40px; padding-right:40px;">
+<section id="home" class="hero">
   <div class="hero-watermark">★</div>
+  <div class="hero-logo-wrap">
+    <img src="img/logo.png" alt="Lone Star Labor Solutions" class="hero-logo-img">
+  </div>
   <div class="hero-content">
     <div class="hero-stars">★ &nbsp; ★ &nbsp; ★</div>
     <div class="hero-eyebrow">Your Documents, With You When You Need Them Most</div>
-    <div class="hero-logo-wrap">
-      <img src="img/logo.png" alt="Lone Star Labor Solutions" class="hero-logo-img">
-    </div>
-    <div class="hero-title">
-      <div class="white">LONE STAR LABOR</div>
-      <div class="gold">SOLUTIONS</div>
-    </div>
     <div class="hero-subtitle">"The power of a business app — always in your pocket."</div>
     <div class="hero-tagline">
       Unions &nbsp;<span>·</span>&nbsp; Businesses &nbsp;<span>·</span>&nbsp; Restaurants &nbsp;<span>·</span>&nbsp; Government &nbsp;<span>·</span>&nbsp; First Responders &nbsp;<span>·</span>&nbsp; Veterans
