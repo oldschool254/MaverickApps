@@ -1329,11 +1329,9 @@ footer {
   padding: 2rem 0 2.5rem;
 }
 
-.footer-logo-img { height: auto; background: #ffffff; padding: 1.25rem; border-radius: 0.75rem; }
 
 .footer-logo {
-  width: 200px !important;
-  max-width: 70% !important;
+  width: 160px !important;
   display: block !important;
   margin: 0 auto !important;
 }
@@ -1895,7 +1893,11 @@ async function sendEmail() {
 <!-- FOOTER -->
 
 <footer>
-  <div class="footer-logo-wrap"><img src="img/logo.png" alt="Lone Star Labor Solutions" class="footer-logo"></div>
+  <div class="footer-logo-wrap">
+    <div style="background:white; border-radius:20px; padding:12px; display:inline-block; box-shadow:0 4px 15px rgba(0,0,0,0.3); text-align:center; margin:0 auto;">
+      <img src="img/logo.png" alt="Lone Star Labor Solutions" class="footer-logo">
+    </div>
+  </div>
   <div class="footer-tagline">Your Documents, With You When You Need Them Most</div>
   <div class="footer-links">
     <a href="#services">Services</a>
