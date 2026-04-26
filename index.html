@@ -531,25 +531,37 @@ nav {
 .discount-hero {
   width: 100%;
   max-width: 100%;
-  background-image: url('img/discount-banner.png');
-  background-size: cover;
-  background-position: center right;
-  position: relative;
   display: flex;
   align-items: stretch;
   min-height: 18.75rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .dh-left {
   width: 50%;
   background: #1B2A6B;
-  padding: 2.5rem 3rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
   box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.dh-right {
+  width: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.dh-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .dh-heading {
@@ -1388,8 +1400,9 @@ footer {
   .serve-list { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .about-visual { display: none; }
-  .discount-hero { background-position: top right; }
-  .dh-left { width: 100%; padding: 2rem 1.5rem; min-height: 12rem; }
+  .discount-hero { flex-direction: column; }
+  .dh-left { width: 100%; padding: 1.5rem; }
+  .dh-right { width: 100%; height: 12rem; }
   .discount-banner-inner { flex-direction: column; gap: 12px; }
   .cash-callout { flex-direction: column; text-align: center; }
   .cash-callout-text { text-align: center; }
@@ -1685,6 +1698,9 @@ async function sendEmail() {
       <a href="#contact" class="dh-btn-primary">BROWSE DEALS</a>
       <a href="#contact" class="dh-btn-secondary">VERIFY ELIGIBILITY</a>
     </div>
+  </div>
+  <div class="dh-right">
+    <img src="img/discount-banner.jpg" alt="Government, First Responders, and Veterans">
   </div>
 </div>
 
