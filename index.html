@@ -331,18 +331,16 @@ nav {
 
 
 .hero-logo-wrap {
-  width: 100%;
-  max-width: 80%;
   margin: 0 auto 2rem;
-  padding: 0 2rem;
-  box-sizing: border-box;
   animation: fadeInDown 0.95s ease both;
 }
 
 .hero-logo-img {
-  width: 100%;
+  width: 420px;
+  max-width: 90%;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .hero-title {
@@ -1412,6 +1410,10 @@ footer {
   .about-stats { grid-template-columns: 1fr 1fr; }
   .contact-inner { grid-template-columns: 1fr; }
   .footer-links { gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-img { width: 320px; }
 }
 
   /* ── CROSS-DEVICE FONT SAFETY NET ── */
