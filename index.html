@@ -245,21 +245,8 @@ nav {
   border-bottom: 1px solid rgba(192,57,43,0.2);
 }
 
-.nav-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  line-height: 0;
-  text-decoration: none;
-}
 
 
-.nav-logo-img {
-  height: 4.0625rem;
-  width: auto;
-  display: block;
-}
 
 .nav-links {
   display: flex;
@@ -346,6 +333,20 @@ nav {
   text-transform: uppercase;
   margin-bottom: 20px;
   animation: fadeInDown 0.9s ease both;
+}
+
+
+.hero-logo-wrap {
+  margin: 0 auto 2rem;
+  animation: fadeInDown 0.95s ease both;
+}
+
+.hero-logo-img {
+  width: 12rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  mix-blend-mode: multiply;
 }
 
 .hero-title {
@@ -1427,7 +1428,6 @@ async function sendEmail() {
 <!-- NAV -->
 
 <nav>
-  <a href="#home" class="nav-logo"><img src="img/logo.png" alt="Lone Star Labor Solutions" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#who-we-serve">Who We Serve</a></li>
@@ -1445,6 +1445,9 @@ async function sendEmail() {
   <div class="hero-content">
     <div class="hero-stars">★ &nbsp; ★ &nbsp; ★</div>
     <div class="hero-eyebrow">Your Documents, With You When You Need Them Most</div>
+    <div class="hero-logo-wrap">
+      <img src="img/logo.png" alt="Lone Star Labor Solutions" class="hero-logo-img">
+    </div>
     <div class="hero-title">
       <div class="white">LONE STAR LABOR</div>
       <div class="gold">SOLUTIONS</div>
