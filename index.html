@@ -531,66 +531,63 @@ nav {
 .discount-hero {
   width: 100%;
   max-width: 100%;
-  background-image: url('img/discount-banner.jpg');
+  background-image: url('img/discount-banner.png');
   background-size: cover;
-  background-position: center right;
+  background-position: center;
+  position: relative;
   display: flex;
-  align-items: stretch;
-  min-height: 13rem;
-}
-
-.discount-hero-panel {
-  width: 55%;
-  background: #ffffff;
-  padding: 2.5rem 3rem;
-  display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 0.875rem;
+  min-height: 16rem;
+  padding: 3rem 2rem;
   box-sizing: border-box;
 }
 
-.dh-line1 {
-  font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
-  color: #1B2A6B;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
+.discount-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
 }
 
-.dh-line2 {
-  font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
-  font-size: clamp(1.5rem, 3.5vw, 2.75rem);
-  color: #C0392B;
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
+.discount-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 56rem;
+  width: 100%;
 }
 
-.dh-sub {
-  font-size: clamp(0.875rem, 1.8vw, 1.1875rem);
-  font-weight: 700;
-  color: #1B2A6B;
+.dh-heading {
+  font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .dh-promo {
-  background: #1B2A6B;
-  color: #ffffff;
   font-family: Impact, 'Arial Black', 'Arial Narrow', sans-serif;
-  font-size: clamp(0.75rem, 1.5vw, 1.0625rem);
+  font-size: clamp(1rem, 2.5vw, 1.75rem);
+  color: #ffffff;
   font-weight: 700;
-  padding: 0.625rem 1rem;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
-  display: inline-block;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .dh-buttons {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  margin-top: 0.5rem;
 }
 
 .dh-btn-primary {
@@ -611,19 +608,19 @@ nav {
 
 .dh-btn-secondary {
   background: transparent;
-  color: #1B2A6B;
+  color: #ffffff;
   padding: 0.625rem 1.5rem;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid #1B2A6B;
+  border: 2px solid #ffffff;
   display: inline-block;
   transition: all 0.3s;
 }
 
-.dh-btn-secondary:hover { background: rgba(27,42,107,0.08); }
+.dh-btn-secondary:hover { background: rgba(255,255,255,0.15); }
 
 /* ============ SECTIONS ============ */
 section {
@@ -1403,8 +1400,7 @@ footer {
   .serve-list { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .about-visual { display: none; }
-  .discount-hero { background-position: top right; }
-  .discount-hero-panel { width: 100%; padding: 2rem 1.5rem; }
+  .discount-hero { min-height: 12rem; padding: 2rem 1.25rem; }
   .discount-banner-inner { flex-direction: column; gap: 12px; }
   .cash-callout { flex-direction: column; text-align: center; }
   .cash-callout-text { text-align: center; }
@@ -1693,10 +1689,9 @@ async function sendEmail() {
 <!-- DISCOUNTS -->
 
 <div id="discounts" class="discount-hero">
-  <div class="discount-hero-panel">
-    <div class="dh-line1">EXCLUSIVE DISCOUNTS</div>
-    <div class="dh-line2">FOR THOSE WHO SERVE</div>
-    <div class="dh-sub">Government. First Responders. Veterans.</div>
+  <div class="discount-hero-overlay"></div>
+  <div class="discount-hero-content">
+    <div class="dh-heading">EXCLUSIVE DISCOUNTS FOR THOSE WHO SERVE</div>
     <div class="dh-promo">SPECIAL DISCOUNT &mdash; 20% OFF FOR NEW CLIENTS</div>
     <div class="dh-buttons">
       <a href="#contact" class="dh-btn-primary">BROWSE DEALS</a>
